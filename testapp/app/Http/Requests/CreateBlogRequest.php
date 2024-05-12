@@ -25,7 +25,8 @@ class CreateBlogRequest extends FormRequest
             'title' => 'required|string',
             'author' => 'required|string',
             'content' => 'required|string',
-        
+            'publication_date' => 'required|string',
+            
         ];
     }
 }
