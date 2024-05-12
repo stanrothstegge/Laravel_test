@@ -15,8 +15,9 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
-
+    'default' => env('DB_CONNECTION', 'sqlite'),
+ #'default' => database_path('testapp\database\database.sqlite'),
+    #'database' => database_path('testapp\database\database.sqlite'),
     /*
     |--------------------------------------------------------------------------
     | Database Connections
@@ -40,7 +41,7 @@ return [
             'url' => env('DATABASE_URL'),
             'database' => env('DB_DATABASE', database_path('database.sqlite')),
             'prefix' => '',
-            'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
+            'foreign_key_constraints' => env('DB_FOREIGN_KEYS', false),
         ],
 
         'mysql' => [

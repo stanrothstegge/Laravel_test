@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\BlogController;
+use Carbon\Carbon;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/blogs', [BlogController::class, 'index']);
+Route::get('/blogs_per_month', [BlogController::class, 'blogsPerMonth']);
+Route::post('/blog', [BlogController::class, 'createBlogPost']);
