@@ -21,3 +21,4 @@ Route::get('/', function () {
 Route::get('/blogs', [BlogController::class, 'index']);
 Route::get('/blogs_per_month', [BlogController::class, 'blogsPerMonth']);
 Route::post('/blog', [BlogController::class, 'createBlogPost']);
+Route::update('/blog',[BlogController::class, 'updateBlogDetails']);

@@ -93,4 +93,8 @@ class BlogController extends Controller
          // Return a response indicating success
          return response()->json(['message' => 'Blog created successfully', 'blog' => $blog], 201);
     }
+
+    public function updateBlogDetails(){
+
+    }
 }
