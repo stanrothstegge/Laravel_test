@@ -94,7 +94,22 @@ class BlogController extends Controller
          return response()->json(['message' => 'Blog created successfully', 'blog' => $blog], 201);
     }
 
-    public function updateBlogDetails(){
+    public function updateBlogDetails(CreateBlogRequest $request){
+        $validatedData = $request->validated();
+        #$data = $request;
+        $data = $request->all(); 
 
+       $blog = Blog::where('title', $validatedData['title'])
+      ->update(['content' => $validatedData['content']]);
+        $blog->save();
+        // Return a success response
     }
+
+      // Update the blog details
+      #$blog->title = $validatedData['title'];
+     # $blog->content = $validatedData['content'];
+    
+      
+      // Return a success response
+   
 }

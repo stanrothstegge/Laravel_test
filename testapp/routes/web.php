@@ -17,8 +17,11 @@ use Carbon\Carbon;
 Route::get('/', function () {
     return view('welcome');
 });
-
+// return all blog entries
 Route::get('/blogs', [BlogController::class, 'index']);
+// return a overview of the published blog count in the last few months. 
 Route::get('/blogs_per_month', [BlogController::class, 'blogsPerMonth']);
+// create a new blog
 Route::post('/blog', [BlogController::class, 'createBlogPost']);
-Route::update('/blog',[BlogController::class, 'updateBlogDetails']);
+// update the blog
+Route::put('/blog',[BlogController::class, 'updateBlogDetails']);
